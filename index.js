@@ -30,6 +30,11 @@ var connectWithRetry = function() {
   };
 connectWithRetry();
 
+process.on('uncaughtException', function (err) {
+  console.error(err);
+  console.log("Node NOT Exiting...");
+});
+
 // Heroku Mongoose connection
 // mongoose.connect('mongodb://heroku_5686p02g:sia8l3fni4jmu7qbn0ac1t75mf@ds349857.mlab.com:49857/heroku_5686p02g', { useNewUrlParser: true });
 
@@ -52,22 +57,23 @@ app.get('/', (req, res) => res.send('Hello World with Express'));
 app.use('/api', apiRoutes);
 // Launch app to listen to specified port
 
-app.get('*', function(req, res){
+app.all('*', function(req, res){
   res.send('what???', 404);
 });
 
-app.patch('*', function(req, res){
-  res.send('what???', 404);
+//An error handling middleware
+app.use(function (err, req, res, next) {
+  res.status(500);
+  res.send("Oops, something went wrong.", 404)
 });
 
-app.patch('*', function(req, res){
-  res.put('what???', 404);
-});
-
-app.patch('*', function(req, res){
-  res.delete('what???', 404);
+//An error handling middleware
+app.use(function (err, req, res, next) {
+  res.status(503);
+  res.send("Oops, unable to connect to database.", 404)
 });
 
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
+module.exports = app
