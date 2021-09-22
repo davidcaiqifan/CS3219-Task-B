@@ -4,7 +4,7 @@
   "description": "A Node App demonstrating simple RESTFul API implementation",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --exit",
     "start": "node index.js"
   },
   "keywords": [
