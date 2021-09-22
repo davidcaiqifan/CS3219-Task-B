@@ -15,7 +15,20 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+
+var mongoUrl = 'mongodb://mongo:27017/resthub'
+const production_uri = "mongodb+srv://david:david@cluster0.tz6dx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+var connectWithRetry = function() {
+    return mongoose.connect(production_uri, function(err) {
+      if (err) {
+        console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
+        setTimeout(connectWithRetry, 5000);
+      } else {
+          console.log('DB connection success!')
+      }
+    }, { useNewUrlParser: true});
+  };
+connectWithRetry();
 
 // Heroku Mongoose connection
 // mongoose.connect('mongodb://heroku_5686p02g:sia8l3fni4jmu7qbn0ac1t75mf@ds349857.mlab.com:49857/heroku_5686p02g', { useNewUrlParser: true });
@@ -30,7 +43,7 @@ else
     console.log("Db connected successfully")
 
 // Setup server port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('Hello World with Express'));
@@ -38,6 +51,23 @@ app.get('/', (req, res) => res.send('Hello World with Express'));
 // Use Api routes in the App
 app.use('/api', apiRoutes);
 // Launch app to listen to specified port
+
+app.get('*', function(req, res){
+  res.send('what???', 404);
+});
+
+app.patch('*', function(req, res){
+  res.send('what???', 404);
+});
+
+app.patch('*', function(req, res){
+  res.put('what???', 404);
+});
+
+app.patch('*', function(req, res){
+  res.delete('what???', 404);
+});
+
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
