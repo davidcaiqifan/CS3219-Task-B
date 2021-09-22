@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 
-var mongoUrl = 'mongodb://mongo:27017/resthub'
+//var mongoUrl = 'mongodb://mongo:27017/resthub'
 const production_uri = "mongodb+srv://david:david@cluster0.tz6dx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 var connectWithRetry = function() {
     return mongoose.connect(production_uri, function(err) {
