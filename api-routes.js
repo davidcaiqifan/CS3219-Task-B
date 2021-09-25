@@ -21,6 +21,19 @@ router.route('/contacts/:contact_id')
     .put(contactController.update)
     .delete(contactController.delete);
 
+// Import zoom controller
+var zoomController = require('./zoomController');
+// Contact routes
+router.route('/zoom')
+    .get(zoomController.index)
+    .post(zoomController.new);
+
+router.route('/zoom/:contact_id')
+    .get(zoomController.view)
+    .patch(zoomController.update)
+    .put(zoomController.update)
+    .delete(zoomController.delete);
+
 router.all('*', function(req, res){
     res.send('api what???', 404);
     });
