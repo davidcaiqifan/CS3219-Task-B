@@ -5,9 +5,8 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_92406e3b1ef8_key -iv $encrypted_92406e3b1ef8_iv
   -in cs3219-task-b1-21698ed3d50a.json.enc -out cs3219-task-b1-21698ed3d50a.json -d
 - npm i -g npm@6.14.10
-
 deploy:
   provider: gae
-  keyfile: "cs3219-task-b1-21698ed3d50a.json"
-  project: "cs3219-task-b1"
+  keyfile: cs3219-task-b1-21698ed3d50a.json
+  project: cs3219-task-b1
   on: main
