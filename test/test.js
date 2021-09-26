@@ -33,7 +33,7 @@ describe("Add zoomclass", () => {
                 .post('/api/zoom')
                 .type('form')
                 .send({
-                    'classname': 'zoomlink test',
+                    'classname': 'zoomlinktest1',
                     'zoomlink': '123',
                     'profemail': '123',
                     'day': '123',
@@ -54,7 +54,7 @@ describe("Read zoomclass", () => {
         // Test to read specified zoomclass record
         it("should add read specified zoomclass", (done) => {
             chai.request(app)
-                .get('/api/zoom/zoomlinktest')
+                .get('/api/zoom/zoomlinktest1')
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
@@ -70,10 +70,10 @@ describe("Update zoomclass", () => {
         // Test to get all students record
         it("Should read new zoomlink", (done) => {
             chai.request(app)
-                .put('/api/zoom/zoomlinktest')
+                .put('/api/zoom/zoomlinktest1')
                 .type('form')
                 .send({
-                    'classname': 'zoomlinktest',
+                    'classname': 'zoomlinktest1',
                     'zoomlink': '123',
                     'profemail': '123',
                     'day': '123',
@@ -89,12 +89,12 @@ describe("Update zoomclass", () => {
     });
 });
 
-describe("Update zoomclass", () => {
+describe("Delete zoomclass", () => {
     describe("Delete /", () => {
         // Test to get all students record
         it("Should read new zoomlink", (done) => {
             chai.request(app)
-                .delete('/api/zoom/zoomlinktest')
+                .delete('/api/zoom/zoomlinktest1')
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');

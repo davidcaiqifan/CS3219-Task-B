@@ -32,7 +32,7 @@ exports.new = function (req, res) {
             res.json({
                 status: "error",
                 message: err,
-            });
+            }, 404);
             //res.json(err);
         else
             res.json({
