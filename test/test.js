@@ -25,6 +25,46 @@ describe("Contacts", () => {
     });
 });
 
+describe("Get zoomlinks", () => {
+    describe("GET /", () => {
+        // Test to get all students record
+        it("should get all zoomlinks record", (done) => {
+            chai.request(app)
+                .get('/api/zoom')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    done();
+                });
+        });
+
+    });
+});
+
+describe("Add zoomlink", () => {
+    describe("GET /", () => {
+        // Test to get all students record
+        it("should get all zoomlinks record", (done) => {
+            chai.request(app)
+                .post('/api/zoom')
+                .type('form')
+                .send({
+                    'classname': 'zoomlink test',
+                    'zoomlink': '123',
+                    'profemail': '123',
+                    'day': '123',
+                    'time': '123'
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    done();
+                });
+        });
+
+    });
+});
+
 describe('Array', function () {
 
     describe('#indexOf()', function () {
