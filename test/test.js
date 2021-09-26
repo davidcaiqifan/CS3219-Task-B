@@ -9,22 +9,6 @@ var app = require('../index')
 chai.use(chaiHttp);
 chai.should();
 
-describe("Contacts", () => {
-    describe("GET /", () => {
-        // Test to get all students record
-        it("should get all contacts record", (done) => {
-            chai.request(app)
-                .get('/api/contacts')
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    res.body.should.be.a('object');
-                    done();
-                });
-        });
-
-    });
-});
-
 describe("Get zoomlinks", () => {
     describe("GET /", () => {
         // Test to get all students record
@@ -41,8 +25,8 @@ describe("Get zoomlinks", () => {
     });
 });
 
-describe("Add zoomlink", () => {
-    describe("GET /", () => {
+describe("Add zoomclass", () => {
+    describe("Create", () => {
         // Test to get all students record
         it("should add new zoomlink", (done) => {
             chai.request(app)
@@ -65,11 +49,58 @@ describe("Add zoomlink", () => {
     });
 });
 
-describe('Array', function () {
-
-    describe('#indexOf()', function () {
-        it('should return -1 when the value is not present', function () {
-            assert.equal([1, 2, 3].indexOf(4), -1);
+describe("Read zoomclass", () => {
+    describe("Read", () => {
+        // Test to read specified zoomclass record
+        it("should add read specified zoomclass", (done) => {
+            chai.request(app)
+                .get('/api/zoom/zoomlinktest')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    done();
+                });
         });
+
+    });
+});
+
+describe("Update zoomclass", () => {
+    describe("Update /", () => {
+        // Test to get all students record
+        it("Should read new zoomlink", (done) => {
+            chai.request(app)
+                .put('/api/zoom/zoomlinktest')
+                .type('form')
+                .send({
+                    'classname': 'zoomlinktest',
+                    'zoomlink': '123',
+                    'profemail': '123',
+                    'day': '123',
+                    'time': '123'
+                })
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    done();
+                });
+        });
+
+    });
+});
+
+describe("Update zoomclass", () => {
+    describe("Delete /", () => {
+        // Test to get all students record
+        it("Should read new zoomlink", (done) => {
+            chai.request(app)
+                .delete('/api/zoom/zoomlinktest')
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    done();
+                });
+        });
+
     });
 });

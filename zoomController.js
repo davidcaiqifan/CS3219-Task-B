@@ -45,9 +45,9 @@ exports.new = function (req, res) {
 exports.view = function (req, res) {
     Zoom.findOne({classname: req.params.classname}, function (err, zoomlink) {
         if (err)
-            res.send(err);
+            res.send(err, 404);
         res.json({
-            message: 'Zoom details loading..',
+            message: 'Zoom details loading..', 
             data: zoomlink
         });
     });
@@ -65,7 +65,7 @@ exports.update = function (req, res) {
         // save the contact and check for errors
         zoom.save(function (err) {
             if (err)
-                res.json(err);
+                res.json(err, 404);
             res.json({
                 message: 'Zoom Info updated',
                 data: zoom
@@ -77,20 +77,10 @@ exports.update = function (req, res) {
 exports.delete = function (req, res) {
     Zoom.findOneAndDelete({classname: req.params.classname}, function (err, zoomlink) {
         if (err)
-            res.send(err);
+            res.send(err, 404);
         res.json({
             status: "success",
             message: 'Zoom detail deleted'
         });
     });
-    // Zoom.remove({
-    //     _id: req.params.zoom_id
-    // }, function (err, zoomlink) {
-    //     if (err)
-    //         res.send(err);
-    //     res.json({
-    //         status: "success",
-    //         message: 'Zoom detail deleted'
-    //     });
-    // });
 };

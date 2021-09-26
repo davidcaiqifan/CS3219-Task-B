@@ -4,7 +4,9 @@ var mongoose = require('mongoose');
 var zoomSchema = mongoose.Schema({
     classname: {
         type: String,
-        required: true
+        index: true,
+        required: true,
+        unique: true
     },
     zoomlink: {
         type: String,
