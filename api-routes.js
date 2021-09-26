@@ -28,7 +28,7 @@ router.route('/zoom')
     .get(zoomController.index)
     .post(zoomController.new);
 
-router.route('/zoom/:contact_id')
+router.route('/zoom/:classname')
     .get(zoomController.view)
     .patch(zoomController.update)
     .put(zoomController.update)
