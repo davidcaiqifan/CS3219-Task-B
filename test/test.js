@@ -10,7 +10,6 @@ chai.use(chaiHttp);
 chai.should();
 
 describe("Get zoomlinks", () => {
-    
     describe("GET /", () => {
         
         // Test to get all students record
@@ -22,9 +21,9 @@ describe("Get zoomlinks", () => {
                     res.body.should.be.a('object');
                     done();
                 });
-        });
+        }).timeout(5000);
 
-    }).timeout(5000);
+    });
 });
 
 describe("Add zoomclass", () => {
