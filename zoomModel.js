@@ -12,7 +12,6 @@ var zoomSchema = mongoose.Schema({
     },
     profemail: {
         type: String,
-        required: true
     },
     day: {
         type: String

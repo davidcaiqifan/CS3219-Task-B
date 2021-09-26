@@ -44,7 +44,7 @@ describe("Get zoomlinks", () => {
 describe("Add zoomlink", () => {
     describe("GET /", () => {
         // Test to get all students record
-        it("should get all zoomlinks record", (done) => {
+        it("should add new zoomlink", (done) => {
             chai.request(app)
                 .post('/api/zoom')
                 .type('form')

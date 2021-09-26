@@ -20,7 +20,7 @@ exports.index = function (req, res) {
 // Handle create zoom actions
 exports.new = function (req, res) {
     var zoom = new Zoom();
-    zoom.name = req.body.classname ? req.body.classname : zoom.name;
+    zoom.classname = req.body.classname ? req.body.classname : zoom.name;
     zoom.zoomlink = req.body.zoomlink;
     zoom.profemail = req.body.profemail;
     zoom.day = req.body.day;
@@ -29,7 +29,11 @@ exports.new = function (req, res) {
     zoom.save(function (err) {
         // Check for validation error
         if (err)
-            res.json(err);
+            res.json({
+                status: "error",
+                message: err,
+            });
+            //res.json(err);
         else
             res.json({
                 message: 'New ZoomClass created!',
@@ -53,7 +57,7 @@ exports.update = function (req, res) {
     Zoom.findById(req.params.zoom_id, function (err, zoom) {
         if (err)
             res.send(err);
-        zoom.name = req.body.classname ? req.body.classname : zoom.name;
+        zoom.classname = req.body.classname ? req.body.classname : zoom.name;
         zoom.zoomlink = req.body.zoomlink;
         zoom.profemail = req.body.profemail;
         zoom.day = req.body.day;
