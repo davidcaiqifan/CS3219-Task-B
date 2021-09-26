@@ -43,7 +43,7 @@ exports.new = function (req, res) {
 };
 // Handle view zoom info
 exports.view = function (req, res) {
-    Zoom.findById(req.params.zoom_id, function (err, zoomlink) {
+    Zoom.findOne({classname: req.params.classname}, function (err, zoomlink) {
         if (err)
             res.send(err);
         res.json({
@@ -54,7 +54,7 @@ exports.view = function (req, res) {
 };
 // Handle update contact info
 exports.update = function (req, res) {
-    Zoom.findById(req.params.zoom_id, function (err, zoom) {
+    Zoom.findOne({classname: req.params.classname}, function (err, zoom) {
         if (err)
             res.send(err);
         zoom.classname = req.body.classname ? req.body.classname : zoom.name;
@@ -75,9 +75,7 @@ exports.update = function (req, res) {
 };
 // Handle delete zoom
 exports.delete = function (req, res) {
-    Zoom.remove({
-        _id: req.params.zoom_id
-    }, function (err, zoomlink) {
+    Zoom.findOneAndDelete({classname: req.params.classname}, function (err, zoomlink) {
         if (err)
             res.send(err);
         res.json({
@@ -85,4 +83,14 @@ exports.delete = function (req, res) {
             message: 'Zoom detail deleted'
         });
     });
+    // Zoom.remove({
+    //     _id: req.params.zoom_id
+    // }, function (err, zoomlink) {
+    //     if (err)
+    //         res.send(err);
+    //     res.json({
+    //         status: "success",
+    //         message: 'Zoom detail deleted'
+    //     });
+    // });
 };
