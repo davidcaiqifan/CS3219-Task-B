@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import MUIDataTable from "mui-datatables";
-import MaterialTable from 'material-table'
 import { forwardRef } from 'react';
+import MaterialTable from 'material-table'
 
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -19,6 +18,14 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
+
+const columns = [
+    { title: "Zoom Class", field: "classname" },
+    { title: "Zoom Link", field: "zoomlink" },
+    { title: "Professor Email", field: "profemail" },
+    { title: "Day", field: 'day' },
+    { title: "Time", field: "time" },
+]
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -40,78 +47,63 @@ const tableIcons = {
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
 };
 
-// const options = {
-//     filterType: 'checkbox',
-//     onRowsDelete: (e) => {
-//         console.log(this.state.zooms)
-//         const idsToDelete = e.data.map(d => data[d.dataIndex].id);
-//         // axios.delete(`http://localhost:4000/api/zoom${data}`)
-//         //     .then(response => {
-//         //         console.log(response.data)
-//         //     })
-//     } 
-// };
-
-export default class ZoomPage extends Component {
+export default class DetailsPage extends Component {
     constructor(props) {
         super(props);
-        this.state = { zooms: [] };
+        this.state = {
+            data: [],
+        };
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/api/zoom')
+        // axios.get(`http://localhost:4000/api/zoom/${this.props.match.params.id}`)
+        //     .then(response => {
+        //         this.setState({
+        //             data: response.data['data']
+        //         });
+        //         console.log(this.state.data)
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     })
+        axios.get(`http://localhost:4000/api/zoom/${this.props.match.params.id}`)
             .then(response => {
-                var result = [];
-                var json_data = response.data['data']
-                json_data.map(x => {
-                    var data1 = []
-                    for (var i in x)
-                        data1.push(x[i])
-                    var id = data1.shift()
-                    data1.push(id)
-                    data1.shift()
-                    result.push(data1);
-                })
-
-                this.setState({ zooms: result });
-                this.setState({ data: response.data['data'] });
-
+                var data1 = []
+                data1.push(response.data)
+                this.setState({
+                    data: data1
+                });
                 console.log(this.state.data)
+                console.log(data1)
             })
             .catch(function (error) {
                 console.log(error);
             })
     }
     render() {
-        const columns = [
-            { title: "Zoom Class", field: "classname"},
-            { title: "Zoom Link", field: "zoomlink" },
-            { title: "Professor Email", field: "profemail" },
-            { title: "Day", field: 'day'},
-            { title: "Time", field: "time"},
-        ]
+        // return (
+        //     <div style={{ height: 400, width: '100%' }}>
+        //         <DataGrid
+        //             rows={rows}
+        //             columns={columns}
+        //             pageSize={5}
+        //             rowsPerPageOptions={[5]}
+        //             checkboxSelection
+        //         />
+        //     </div>
+        // );
         return (
-            <div className="App">
-                <h1 align="center">React-App</h1>
-                <h4 align='center'>View all zoom classes</h4>
+            <div style={{ height: 400, width: '100%' }}>
                 <MaterialTable
                     icons={tableIcons}
                     title="Zoom Classes"
                     data={this.state.data}
                     columns={columns}
-                    editable={{
-                        onRowAdd: (newRow) => new Promise((resolve, reject) => {
-                            console.log(newRow)
-                            // const updatedRows = [...this.state.data, { id: Math.floor(Math.random() * 100), ...newRow }]
-                            // setTimeout(() => {
-                            //     setData(updatedRows)
-                            //     resolve()
-                            // }, 2000)
-                        }),
+                    options={{
+                        actionsColumnIndex: -1, addRowPosition: "first"
                     }}
                 />
             </div>
         );
     }
 }
-

@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ZoomPage from './pages/ZoomPage';
 import AddZoom from './pages/AddZoom';
-
+import Test from './pages/test';
+import DetailsPage from './pages/DetailsPage';
 class App extends Component {
   render() {
     return (
@@ -14,7 +15,7 @@ class App extends Component {
             <div className="collpase navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
-                  <Link to="/" className="nav-link">Edit ZoomClass</Link>
+                  <Link to="/edit" className="nav-link">Edit ZoomClass</Link>
                 </li>
                 <li className="navbar-item">
                   <Link to="/create" className="nav-link">Create ZoomClass</Link>
@@ -25,6 +26,8 @@ class App extends Component {
           <br />
           <Route path="/" exact component={ZoomPage} />
           <Route path="/create" exact component={AddZoom} />
+          <Route path="/edit" exact component={Test} />
+          <Route exact path="/details/:id" component={DetailsPage}/>
         </div>
       </Router>
     );
