@@ -1,12 +1,12 @@
 // Import express
-let express = require('express');
+const express = require('express');
 // Import Mongoose
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 // Initialize the app
-let app = express();
+const app = express();
 
 // Import routes
-let apiRoutes = require("./api-routes");
+const apiRoutes = require("./api-routes");
 // Configure bodyparser to handle post requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -63,6 +63,7 @@ app.use(function (err, req, res, next) {
 app.listen(port, function () {
   console.log("Running zoomclasses on port " + port);
 });
+
 // module.exports = app
 
 exports.b3api = app;
