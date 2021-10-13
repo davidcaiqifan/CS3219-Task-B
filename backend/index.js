@@ -1,3 +1,4 @@
+const functions = require('firebase-functions');
 // Import express
 const express = require('express');
 // Import Mongoose
