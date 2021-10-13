@@ -60,10 +60,8 @@ app.use(function (err, req, res, next) {
   res.send("Oops, unable to connect to database.", 404)
 });
 
-app.listen(port, function () {
-  console.log("Running zoomclasses on port " + port);
-});
+// app.listen(port, function () {
+//   console.log("Running zoomclasses on port " + port);
+// });
 
-// module.exports = app
-
-exports.b3api = app;
+module.exports = app
