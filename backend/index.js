@@ -65,3 +65,5 @@ app.use(function (err, req, res, next) {
 // });
 
 module.exports = app
+
+exports.expressApi = functions.https.onRequest(app);
