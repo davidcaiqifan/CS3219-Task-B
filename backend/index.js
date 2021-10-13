@@ -63,6 +63,6 @@ app.use(function (err, req, res, next) {
 app.listen(port, function () {
   console.log("Running zoomclasses on port " + port);
 });
-module.exports = app
+// module.exports = app
 
 exports.b3api = app;
