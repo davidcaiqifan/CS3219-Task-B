@@ -15,7 +15,7 @@ app.use(express.json());
 const dev_uri = 'mongodb://localhost:27017/zoom'
 const production_uri = "mongodb+srv://david:david@cluster0.tz6dx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-mongoose.connect(dev_uri, {
+mongoose.connect(production_uri, {
   useNewUrlParser: true
 }).then(() => {
   console.log("Successfully connected to the database");

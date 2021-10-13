@@ -1,0 +1,73 @@
+GET http://localhost:6000/api/users
+
+###
+
+POST http://localhost:6000/api/users 
+Content-Type: application/json
+ 
+{
+"username": "Kyle", "password": "password"
+}
+
+###
+
+POST http://localhost:6000/api/users/login 
+Content-Type: application/json
+
+{
+"username": "Kyle", "password": "password"
+}
+
+###
+
+POST http://localhost:6000/api/users/login 
+Content-Type: application/json
+
+{
+"username": "david", "password": "password"
+}
+
+###
+
+DELETE http://localhost:6000/api/users/Kyle
+Content-Type: application/json
+
+# {
+# "username": "david", "password": "password"
+# }
+
+###
+
+POST http://localhost:6000/api/users/logint
+Content-Type: application/json
+
+{
+"username": "Kyle", "password": "password"
+}
+
+###
+
+POST http://localhost:6000/api/users/auth Content-Type: application/json
+
+{
+
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTYzNDAyNzU5NywiZXhwIjoxNjM0MDI3NjEyfQ.FX_b7L-70VKTXfNDecNPX023jvRGeKievzfqzjQ9_-o"
+}
+
+###
+
+GET http://localhost:6000/api/users/auth Authorization: Bearer 
+{
+"username": "Kyle",
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTYzNDAyODU4MywiZXhwIjoxNjM0MDI4NTk4fQ.eYexjMH89lMQ6ZJhEMXvs-niYQN7jOHpf3j0mCCB-7k"
+}
+
+###
+GET http://localhost:6000/api/users/auth
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTYzNDAzMTIyMX0.H1pL9Armjyfnmv5bre63THmy2ASR7PaSNFqGi32uNvo
+
+{
+"username": "Kyle"
+}
+
