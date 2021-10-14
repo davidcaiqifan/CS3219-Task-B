@@ -1,4 +1,5 @@
 import * as React from 'react';
+import "../custom.scss";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,9 +11,10 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { theme } from '../theme';
+import {ThemeProvider } from '@mui/material/styles';
 import Autocomplete from '@mui/material/Autocomplete';
-import { useFormik } from 'formik';
+import { useFormik } from 'formik'; 
 import axios from 'axios';
 
 function Copyright(props) {
@@ -28,7 +30,6 @@ function Copyright(props) {
     );
 }
 
-const theme = createTheme();
 
 const daysofweek = [
     'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
@@ -45,7 +46,7 @@ export default function SignIn() {
         },
         //validate,
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
             const newzoom = {
                 classname: values.classname,
                 zoomlink: values.zoomlink,
@@ -140,20 +141,8 @@ export default function SignIn() {
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Sign In
+                            Add Zoom Class
                         </Button>
-                        <Grid container>
-                            <Grid item xs>
-                                <Link href="#" variant="body2">
-                                    Forgot password?
-                                </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link href="#" variant="body2">
-                                    {"Don't have an account? Sign Up"}
-                                </Link>
-                            </Grid>
-                        </Grid>
                     </Box>
                 </Box>
                 <Copyright sx={{ mt: 8, mb: 4 }} />

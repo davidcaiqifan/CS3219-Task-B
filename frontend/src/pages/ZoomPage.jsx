@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import MUIDataTable from "mui-datatables";
 import MaterialTable from 'material-table'
 import { forwardRef } from 'react';
 

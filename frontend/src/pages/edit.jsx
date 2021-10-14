@@ -3,11 +3,11 @@ import { useState, useEffect, props } from 'react';
 import MaterialTable from 'material-table'
 import { forwardRef } from 'react';
 import axios from 'axios';
-import IconButton from '@mui/material/IconButton';
-import AddIcon from '@material-ui/icons/Add';
-import Icon from '@mui/material/Icon';
-import SearchIcon from '@mui/icons-material/Search';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import IconButton from '@mui/material/IconButton';
+// import AddIcon from '@material-ui/icons/Add';
+// import Icon from '@mui/material/Icon';
+// import SearchIcon from '@mui/icons-material/Search';
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 import AddBox from '@material-ui/icons/AddBox';
@@ -225,7 +225,7 @@ function App() {
                         const index = oldRow.tableData.id;
                         const updatedRows = [...data]
                         updatedRows[index] = updatedRow
-                        axios.patch(`http://localhost:4000/api/zoom/${oldRow._id}`, updatedRow)
+                        axios.put(`http://localhost:4000/api/zoom/${oldRow._id}`, updatedRow)
                             .then(res => {
                                 console.log(res.data)
                             });

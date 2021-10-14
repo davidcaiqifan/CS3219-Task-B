@@ -5,7 +5,7 @@ let router = require('express').Router();
 router.get('/', function (req, res) {
     res.json({
         status: 'API Its Working',
-        message: 'Welcome to RESTHub crafted with love!',
+        message: 'Welcome to Zoom Hub!',
     });
 });
 
@@ -16,7 +16,7 @@ router.route('/zoom')
     .get(zoomController.index)
     .post(zoomController.new);
 
-router.route('/zoom/:id')
+router.route('/zoom/:classname')
     .get(zoomController.view)
     .patch(zoomController.update)
     .put(zoomController.update)

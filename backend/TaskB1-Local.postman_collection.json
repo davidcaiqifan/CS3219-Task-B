@@ -1,0 +1,503 @@
+{
+	"info": {
+		"_postman_id": "a003381a-59c6-404b-8495-867b2aafbcca",
+		"name": "TaskB1-Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check api working",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "classname",
+							"value": "zoomlink test",
+							"type": "text"
+						},
+						{
+							"key": "zoomlink",
+							"value": "zoomlink test",
+							"type": "text"
+						},
+						{
+							"key": "profemail",
+							"value": "profemail@test.com",
+							"type": "text"
+						},
+						{
+							"key": "day",
+							"value": "Monday",
+							"type": "text"
+						},
+						{
+							"key": "time",
+							"value": "2359",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/zoom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/zoom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/zoom/zoomlinktest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom",
+						"zoomlinktest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Zoomclass",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "classname",
+							"value": "zoomlinktest",
+							"type": "text"
+						},
+						{
+							"key": "zoomlink",
+							"value": "zoomlink test edited",
+							"type": "text"
+						},
+						{
+							"key": "profemail",
+							"value": "profemail@test.com",
+							"type": "text"
+						},
+						{
+							"key": "day",
+							"value": "Monday",
+							"type": "text"
+						},
+						{
+							"key": "time",
+							"value": "2359",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/zoom/zoomlinktest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom",
+						"zoomlinktest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Zoomclass Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "zoomlink",
+							"value": "zoomlink test edited",
+							"type": "text"
+						},
+						{
+							"key": "classname",
+							"value": "zoomlink test",
+							"type": "text"
+						},
+						{
+							"key": "profemail",
+							"value": "profemail@test.com",
+							"type": "text"
+						},
+						{
+							"key": "day",
+							"value": "Monday",
+							"type": "text"
+						},
+						{
+							"key": "time",
+							"value": "2359",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/zoom/zoomlink test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom",
+						"zoomlink test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/zoom/zoomlink test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom",
+						"zoomlink test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new zoom class with existing zoom class name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "classname",
+							"value": "zoomlink test",
+							"type": "text"
+						},
+						{
+							"key": "zoomlink",
+							"value": "123",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/zoom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View non existing zoom class",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/zoom/zoomlinktest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom",
+						"zoomlinktest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update non existing zoom class",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "zoomlink",
+							"value": "zoomlink test edited",
+							"type": "text"
+						},
+						{
+							"key": "classname",
+							"value": "zoomlink test",
+							"type": "text"
+						},
+						{
+							"key": "profemail",
+							"value": "profemail@test.com",
+							"type": "text"
+						},
+						{
+							"key": "day",
+							"value": "Monday",
+							"type": "text"
+						},
+						{
+							"key": "time",
+							"value": "2359",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/zoom/nonexistingclassname",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom",
+						"nonexistingclassname"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete non existing zoom class error",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/zoom/nonexistingid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"zoom",
+						"nonexistingid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unavailable path",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sadsad",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "david",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "david@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "123123213",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"type": "text"
+						},
+						{
+							"key": "dsadasd",
+							"value": "hi",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/unavailable path",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"unavailable path"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unavailable path Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sadsad",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "david",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "david@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "123123213",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"type": "text"
+						},
+						{
+							"key": "dsadasd",
+							"value": "hi",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/unavailable path",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"unavailable path"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

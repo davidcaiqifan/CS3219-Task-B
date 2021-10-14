@@ -31,8 +31,8 @@ exports.new = function (req, res) {
         if (err)
             res.json({
                 status: "error",
-                message: err,
-            }, 404);
+                message: "There was a problem creating a new zoom class. There is already another existing class with the same name or requried parameters are not filled." + err,
+            }, 409);
         //res.json(err);
         else
             res.json({
@@ -54,22 +54,23 @@ exports.new = function (req, res) {
 // };
 
 exports.view = (req, res) => {
-    Zoom.findById(req.params.id)
+    Zoom.findOne({classname : req.params.classname})
         .then(zoom => {
             if (!zoom) {
                 return res.status(404).send({
-                    message: "User not found with id " + req.params.id
+                    message: "Zoomclass not found with classname " + req.params.classname
                 });
             }
             res.send(zoom);
         }).catch(err => {
+            console.log(err)
             if (err.kind === 'ObjectId') {
                 return res.status(404).send({
-                    message: "Zoom Class not found with id " + req.params.id
+                    message: "Zoom Class not found with classname " + req.params.classname
                 });
             }
             return res.status(500).send({
-                message: "Error getting Zoom Class with id " + req.params.id
+                message: "Error getting Zoom Class with classname " + req.params.classname
             });
         });
 };
@@ -104,7 +105,7 @@ exports.update = (req, res) => {
             message: "Please fill all required field"
         });
     }
-    Zoom.findByIdAndUpdate(req.params.id, {
+    Zoom.findOneAndUpdate({classname : req.params.classname}, {
         classname: req.body.classname,
         zoomlink: req.body.zoomlink,
         profemail: req.body.profemail,
@@ -114,18 +115,19 @@ exports.update = (req, res) => {
         .then(zoom => {
             if (!zoom) {
                 return res.status(404).send({
-                    message: "zoom not found with id " + req.params.id
+                    message: "zoom not found with classname " + req.params.classname
                 });
             }
-            res.send(user);
+            res.send(zoom);
         }).catch(err => {
+            // console.log(err)
             if (err.kind === 'ObjectId') {
                 return res.status(404).send({
-                    message: "zoom not found with id " + req.params.id
+                    message: "zoom not found with classname " + req.params.classname
                 });
             }
             return res.status(500).send({
-                message: "Error updating zoomclass with id " + req.params.id
+                message: "Error updating zoomclass with classname " + req.params.classname
             });
         });
 };
@@ -141,22 +143,22 @@ exports.update = (req, res) => {
 //     });
 // };
 exports.delete = (req, res) => {
-    Zoom.findByIdAndRemove(req.params.id)
+    Zoom.findOneAndRemove({classname : req.params.classname})
         .then(zoomclass => {
             if (!zoomclass) {
                 return res.status(404).send({
-                    message: "Zoom not found with id " + req.params.id
+                    message: "Zoom not found with class name " + req.params.classname
                 });
             }
             res.send({ message: "ZoomClass deleted successfully!" });
         }).catch(err => {
             if (err.kind === 'ObjectId' || err.name === 'NotFound') {
                 return res.status(404).send({
-                    message: "ZoomClass not found with id " + req.params.id
+                    message: "ZoomClass not found with classname " + req.params.classname
                 });
             }
             return res.status(500).send({
-                message: "Could not delete ZoomClass with id " + req.params.id
+                message: "Could not delete ZoomClass with classname " + req.params.classname
             });
         });
 };
