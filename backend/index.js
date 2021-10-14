@@ -1,4 +1,3 @@
-const functions = require('firebase-functions');
 // Import express
 const express = require('express');
 // Import Mongoose
@@ -20,7 +19,7 @@ mongoose.connect(production_uri, {
   useNewUrlParser: true
 }).then(() => {
   console.log("Successfully connected to the database");
-}).catch(err => {
+}).catch(err => { 
   console.log('Could not connect to the database.', err);
   process.exit();
 });
@@ -67,4 +66,3 @@ app.listen(port, function () {
 
 module.exports = app
 
-exports.expressApi = functions.https.onRequest(app);
