@@ -1,0 +1,425 @@
+travis_fold:start:worker_info
+[0K[33;1mWorker information[0m
+hostname: 1a14b24b-3986-4ea7-b9bc-24c3406e3347@1.worker-com-oss-75486f8dc9-k79pq.gce-production-3
+version: 6.2.22 https://github.com/travis-ci/worker/tree/858cb91994a513269f2fe9782c15fc113e966231
+instance: travis-job-4e55f954-8b48-4ee8-9be2-41851eb57620 travis-ci-sardonyx-xenial-1593004276-4d46c6b3 (via amqp)
+startup: 6.477388785s
+travis_fold:end:worker_info
+[0Ktravis_time:start:16df7dbb
+[0Ktravis_time:end:16df7dbb:start=1634359824197816213,finish=1634359824345475046,duration=147658833,event=no_world_writable_dirs
+[0Ktravis_time:start:1178c6a9
+[0Ktravis_time:end:1178c6a9:start=1634359824348469795,finish=1634359824351662536,duration=3192741,event=setup_filter
+[0Ktravis_time:start:1d5d85ea
+[0Ktravis_time:end:1d5d85ea:start=1634359824356549416,finish=1634359824370199426,duration=13650010,event=agent
+[0Ktravis_time:start:0a753770
+[0Ktravis_time:end:0a753770:start=1634359824374137516,finish=1634359824377189877,duration=3052361,event=check_unsupported
+[0Ktravis_time:start:01b74ab7
+[0Ktravis_fold:start:system_info
+[0K[33;1mBuild system information[0m
+Build language: node_js
+Build dist: xenial
+Build id: 239954872
+Job id: 543526791
+Runtime kernel version: 4.15.0-1077-gcp
+travis-build version: 267382cc
+[34m[1mBuild image provisioning date and time[0m
+Wed Jun 24 13:36:52 UTC 2020
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.6 LTS
+Release:	16.04
+Codename:	xenial
+[34m[1mSystemd Version[0m
+systemd 229
+[34m[1mCookbooks Version[0m
+3f92a99 https://github.com/travis-ci/travis-cookbooks/tree/3f92a99
+[34m[1mgit version[0m
+git version 2.27.0
+[34m[1mbash version[0m
+GNU bash, version 4.3.48(1)-release (x86_64-pc-linux-gnu)
+[34m[1mgcc version[0m
+gcc (Ubuntu 5.4.0-6ubuntu1~16.04.12) 5.4.0 20160609
+[34m[1mdocker version[0m
+Client:
+ Version:           18.06.0-ce
+ API version:       1.38
+ Go version:        go1.10.3
+ Git commit:        0ffa825
+ Built:             Wed Jul 18 19:11:02 2018
+ OS/Arch:           linux/amd64
+ Experimental:      false
+
+Server:
+ Engine:
+  Version:          18.06.0-ce
+  API version:      1.38 (minimum version 1.12)
+  Go version:       go1.10.3
+  Git commit:       0ffa825
+  Built:            Wed Jul 18 19:09:05 2018
+  OS/Arch:          linux/amd64
+  Experimental:     false
+[34m[1mclang version[0m
+clang version 7.0.0 (tags/RELEASE_700/final)
+[34m[1mjq version[0m
+jq-1.5
+[34m[1mbats version[0m
+Bats 0.4.0
+[34m[1mshellcheck version[0m
+0.7.0
+[34m[1mshfmt version[0m
+v2.6.3
+[34m[1mccache version[0m
+3.2.4
+[34m[1mcmake version[0m
+cmake version 3.12.4
+[34m[1mheroku version[0m
+heroku/7.42.1 linux-x64 node-v12.16.2
+[34m[1mimagemagick version[0m
+Version: ImageMagick 6.8.9-9 Q16 x86_64 2019-11-12 http://www.imagemagick.org
+[34m[1mmd5deep version[0m
+4.4
+[34m[1mmercurial version[0m
+version 4.8
+[34m[1mmysql version[0m
+mysql  Ver 14.14 Distrib 5.7.30, for Linux (x86_64) using  EditLine wrapper
+[34m[1mopenssl version[0m
+OpenSSL 1.0.2g  1 Mar 2016
+[34m[1mpacker version[0m
+1.3.3
+[34m[1mpostgresql client version[0m
+psql (PostgreSQL) 10.13 (Ubuntu 10.13-1.pgdg16.04+1)
+[34m[1mragel version[0m
+Ragel State Machine Compiler version 6.8 Feb 2013
+[34m[1msudo version[0m
+1.8.16
+[34m[1mgzip version[0m
+gzip 1.6
+[34m[1mzip version[0m
+Zip 3.0
+[34m[1mvim version[0m
+VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Mar 18 2020 14:06:17)
+[34m[1miptables version[0m
+iptables v1.6.0
+[34m[1mcurl version[0m
+curl 7.47.0 (x86_64-pc-linux-gnu) libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3
+[34m[1mwget version[0m
+GNU Wget 1.17.1 built on linux-gnu.
+[34m[1mrsync version[0m
+rsync  version 3.1.1  protocol version 31
+[34m[1mgimme version[0m
+v1.5.4
+[34m[1mnvm version[0m
+0.35.3
+[34m[1mperlbrew version[0m
+/home/travis/perl5/perlbrew/bin/perlbrew  - App::perlbrew/0.88
+[34m[1mphpenv version[0m
+rbenv 1.1.2-30-gc879cb0
+[34m[1mrvm version[0m
+rvm 1.29.10 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io]
+[34m[1mdefault ruby version[0m
+ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mElasticSearch version[0m
+5.5.0
+[34m[1mInstalled Firefox version[0m
+firefox 63.0.1
+[34m[1mMongoDB version[0m
+MongoDB 4.0.19
+[34m[1mPhantomJS version[0m
+2.1.1
+[34m[1mPre-installed PostgreSQL versions[0m
+9.4.26
+9.5.22
+9.6.18
+[34m[1mRedis version[0m
+redis-server 6.0.5
+[34m[1mPre-installed Go versions[0m
+1.11.1
+[34m[1mant version[0m
+Apache Ant(TM) version 1.9.6 compiled on July 20 2018
+[34m[1mmvn version[0m
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+[34m[1mgradle version[0m
+Gradle 5.1.1!
+[34m[1mlein version[0m
+Leiningen 2.9.3 on Java 11.0.2 OpenJDK 64-Bit Server VM
+[34m[1mPre-installed Node.js versions[0m
+v10.21.0
+v11.0.0
+v12.18.1
+v4.9.1
+v6.17.1
+v8.12.0
+v8.17.0
+v8.9
+[34m[1mphpenv versions[0m
+  system
+  5.6
+  5.6.40
+  7.1
+  7.1.27
+  7.2
+* 7.2.15 (set by /home/travis/.phpenv/version)
+  hhvm
+  hhvm-stable
+[34m[1mcomposer --version[0m
+Composer version 1.8.4 2019-02-11 10:52:10
+[34m[1mPre-installed Ruby versions[0m
+ruby-2.3.8
+ruby-2.4.5
+ruby-2.5.3
+travis_fold:end:system_info
+[0K
+travis_time:end:01b74ab7:start=1634359824380986006,finish=1634359824408588993,duration=27602987,event=show_system_info
+[0Ktravis_time:start:018c6849
+[0Ktravis_time:end:018c6849:start=1634359824418288592,finish=1634359824450686439,duration=32397847,event=rm_riak_source
+[0Ktravis_time:start:07f52bdc
+[0Ktravis_time:end:07f52bdc:start=1634359824458829576,finish=1634359824482794263,duration=23964687,event=fix_rwky_redis
+[0Ktravis_time:start:0bece946
+[0Ktravis_time:end:0bece946:start=1634359824490118738,finish=1634359825010588904,duration=520470166,event=wait_for_network
+[0Ktravis_time:start:17f6afe6
+[0Ktravis_time:end:17f6afe6:start=1634359825014121111,finish=1634359825242192810,duration=228071699,event=update_apt_keys
+[0Ktravis_time:start:182e6324
+[0Ktravis_time:end:182e6324:start=1634359825246445463,finish=1634359825296629096,duration=50183633,event=fix_hhvm_source
+[0Ktravis_time:start:0b8d53c8
+[0Ktravis_time:end:0b8d53c8:start=1634359825301089321,finish=1634359825304290585,duration=3201264,event=update_mongo_arch
+[0Ktravis_time:start:310607b2
+[0Ktravis_time:end:310607b2:start=1634359825308374644,finish=1634359825347387509,duration=39012865,event=fix_sudo_enabled_trusty
+[0Ktravis_time:start:0c067cc6
+[0Ktravis_time:end:0c067cc6:start=1634359825351818737,finish=1634359825354474568,duration=2655831,event=update_glibc
+[0Ktravis_time:start:013f4bcb
+[0Ktravis_time:end:013f4bcb:start=1634359825360469510,finish=1634359825368202592,duration=7733082,event=clean_up_path
+[0Ktravis_time:start:03c93310
+[0Ktravis_time:end:03c93310:start=1634359825372428504,finish=1634359825380380274,duration=7951770,event=fix_resolv_conf
+[0Ktravis_time:start:0dab91ac
+[0Ktravis_time:end:0dab91ac:start=1634359825385083828,finish=1634359825393817914,duration=8734086,event=fix_etc_hosts
+[0Ktravis_time:start:02ae8a1a
+[0Ktravis_time:end:02ae8a1a:start=1634359825397923672,finish=1634359825407033053,duration=9109381,event=fix_mvn_settings_xml
+[0Ktravis_time:start:05e6c5ca
+[0Ktravis_time:end:05e6c5ca:start=1634359825412481091,finish=1634359825421551343,duration=9070252,event=no_ipv6_localhost
+[0Ktravis_time:start:07e86940
+[0Ktravis_time:end:07e86940:start=1634359825424984791,finish=1634359825427113681,duration=2128890,event=fix_etc_mavenrc
+[0Ktravis_time:start:13f68c30
+[0Ktravis_time:end:13f68c30:start=1634359825431577754,finish=1634359825434650683,duration=3072929,event=fix_wwdr_certificate
+[0Ktravis_time:start:03ecf3c0
+[0Ktravis_time:end:03ecf3c0:start=1634359825439395073,finish=1634359825462854512,duration=23459439,event=put_localhost_first
+[0Ktravis_time:start:20113f0b
+[0Ktravis_time:end:20113f0b:start=1634359825468718557,finish=1634359825471904270,duration=3185713,event=home_paths
+[0Ktravis_time:start:2e6fce10
+[0Ktravis_time:end:2e6fce10:start=1634359825476219128,finish=1634359825488033713,duration=11814585,event=disable_initramfs
+[0Ktravis_time:start:024b994a
+[0Ktravis_time:end:024b994a:start=1634359825492160176,finish=1634359825786008041,duration=293847865,event=disable_ssh_roaming
+[0Ktravis_time:start:113d1794
+[0Ktravis_time:end:113d1794:start=1634359825790325526,finish=1634359825792751906,duration=2426380,event=debug_tools
+[0Ktravis_time:start:126a9419
+[0Ktravis_time:end:126a9419:start=1634359825795922379,finish=1634359825799517267,duration=3594888,event=uninstall_oclint
+[0Ktravis_time:start:072d441a
+[0Ktravis_time:end:072d441a:start=1634359825803329684,finish=1634359825806112167,duration=2782483,event=rvm_use
+[0Ktravis_time:start:11b1bc3c
+[0Ktravis_time:end:11b1bc3c:start=1634359825809370802,finish=1634359825817172892,duration=7802090,event=rm_etc_boto_cfg
+[0Ktravis_time:start:081244ca
+[0Ktravis_time:end:081244ca:start=1634359825821048914,finish=1634359825825110199,duration=4061285,event=rm_oraclejdk8_symlink
+[0Ktravis_time:start:14fe63e3
+[0Ktravis_time:end:14fe63e3:start=1634359825829943000,finish=1634359825916504145,duration=86561145,event=enable_i386
+[0Ktravis_time:start:004f12b0
+[0Ktravis_time:end:004f12b0:start=1634359825921388173,finish=1634359825926853757,duration=5465584,event=update_rubygems
+[0Ktravis_time:start:0fed5c7f
+[0Ktravis_time:end:0fed5c7f:start=1634359825931936193,finish=1634359826715385634,duration=783449441,event=ensure_path_components
+[0Ktravis_time:start:1789a800
+[0Ktravis_time:end:1789a800:start=1634359826720000546,finish=1634359826722695777,duration=2695231,event=redefine_curl
+[0Ktravis_time:start:1898fa32
+[0Ktravis_time:end:1898fa32:start=1634359826726937730,finish=1634359826822582161,duration=95644431,event=nonblock_pipe
+[0Ktravis_time:start:1984c79c
+[0Ktravis_time:end:1984c79c:start=1634359826827602492,finish=1634359832860676477,duration=6033073985,event=apt_get_update
+[0Ktravis_time:start:05133c00
+[0Ktravis_time:end:05133c00:start=1634359832864856909,finish=1634359832867320375,duration=2463466,event=deprecate_xcode_64
+[0Ktravis_time:start:021d91c0
+[0Ktravis_time:end:021d91c0:start=1634359832871765944,finish=1634359835660431699,duration=2788665755,event=update_heroku
+[0Ktravis_time:start:0103437c
+[0Ktravis_time:end:0103437c:start=1634359835664861192,finish=1634359835667141194,duration=2280002,event=shell_session_update
+[0Ktravis_time:start:13d8c958
+[0Ktravis_fold:start:docker_mtu_and_registry_mirrors
+[0Ktravis_fold:end:docker_mtu_and_registry_mirrors
+[0Ktravis_time:end:13d8c958:start=1634359835671386963,finish=1634359838218079011,duration=2546692048,event=set_docker_mtu_and_registry_mirrors
+[0Ktravis_time:start:11db9afe
+[0Ktravis_fold:start:resolvconf
+[0Ktravis_fold:end:resolvconf
+[0Ktravis_time:end:11db9afe:start=1634359838224389921,finish=1634359838288124514,duration=63734593,event=resolvconf
+[0Ktravis_time:start:067dbf26
+[0Ktravis_time:end:067dbf26:start=1634359838296444092,finish=1634359838432525406,duration=136081314,event=maven_central_mirror
+[0Ktravis_time:start:2331d8ea
+[0Ktravis_time:end:2331d8ea:start=1634359838437400112,finish=1634359838523713524,duration=86313412,event=maven_https
+[0Ktravis_time:start:2fbfa5f8
+[0Ktravis_time:end:2fbfa5f8:start=1634359838527633979,finish=1634359838529868752,duration=2234773,event=fix_ps4
+[0Ktravis_time:start:03fac83e
+[0Ktravis_fold:start:ssh_key
+[0KInstalling SSH key from: default repository key
+Key fingerprint: 6e:bd:f4:ad:46:bd:fd:f3:2f:de:65:2a:ec:32:57:74
+travis_fold:end:ssh_key
+[0KUsing /home/travis/.netrc to clone repository.
+
+travis_fold:start:git.checkout
+[0Ktravis_time:start:1578ea54
+[0K$ git clone --depth=50 --branch=main https://github.com/davidcaiqifan/CS3219-Task-B.git davidcaiqifan/CS3219-Task-B
+Cloning into 'davidcaiqifan/CS3219-Task-B'...
+travis_time:end:1578ea54:start=1634359838554520787,finish=1634359842074835476,duration=3520314689,event=checkout
+[0K$ cd davidcaiqifan/CS3219-Task-B
+$ git checkout -qf 855ce9acce799c7b150fe6c90e05e05b08d04cf8
+travis_fold:end:git.checkout
+[0K
+travis_time:end:1578ea54:start=1634359838554520787,finish=1634359842095846271,duration=3541325484,event=checkout
+[0Ktravis_time:start:12e1de54
+[0K
+[33;1mSetting environment variables from repository settings[0m
+$ export encrypted_92406e3b1ef8_key=[secure]
+$ export encrypted_92406e3b1ef8_iv=[secure]
+$ export encrypted_d80a2d296111_key=[secure]
+$ export encrypted_d80a2d296111_iv=[secure]
+
+travis_time:end:12e1de54:start=1634359842102762699,finish=1634359842111826371,duration=9063672,event=env
+[0Ktravis_fold:start:nvm.install
+[0Ktravis_time:start:0a719804
+[0K$ nvm install 14.15.4
+curl: (60) server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+More details here: http://curl.haxx.se/docs/sslcerts.html
+
+curl performs SSL certificate verification by default, using a "bundle"
+ of Certificate Authority (CA) public keys (CA certs). If the default
+ bundle file isn't adequate, you can specify an alternate file
+ using the --cacert option.
+If this HTTPS server uses a certificate signed by a CA represented in
+ the bundle, the certificate verification probably failed due to a
+ problem with the certificate (it might be expired, or the name might
+ not match the domain name in the URL).
+If you'd like to turn off curl's verification of the certificate, use
+ the -k (or --insecure) option.
+Downloading and installing node v14.15.4...
+Downloading https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz...
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v14.15.4 (npm v6.14.10)
+travis_time:end:0a719804:start=1634359842403982922,finish=1634359845856054917,duration=3452071995,event=setup
+[0Ktravis_fold:end:nvm.install
+[0K
+travis_fold:start:cache.1
+[0KSetting up build cache
+$ export CASHER_DIR=${TRAVIS_HOME}/.casher
+travis_time:start:0dd93ffc
+[0K$ Installing caching utilities
+travis_time:end:0dd93ffc:start=1634359846928726129,finish=1634359847016782212,duration=88056083,event=setup_casher
+[0Ktravis_time:start:1745e62e
+[0Ktravis_time:end:1745e62e:start=1634359847022833536,finish=1634359847026366859,duration=3533323,event=setup_casher
+[0Ktravis_time:start:331b3396
+[0Kattempting to download cache archive[0m
+[32;1mfetching main/cache--linux-xenial-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855--node-14.15.4.tgz[0m
+[32;1mfound cache[0m
+travis_time:end:331b3396:start=1634359847031121497,finish=1634359848516996180,duration=1485874683,event=setup_casher
+[0Ktravis_fold:end:cache.1
+[0K
+travis_fold:start:cache.npm
+[0K
+travis_time:start:0114e280
+[0Ktravis_time:end:0114e280:start=1634359848673895620,finish=1634359848676923282,duration=3027662,event=setup_cache
+[0Ktravis_time:start:1b996c4f
+[0Kadding /home/travis/build/davidcaiqifan/CS3219-Task-B/node_modules to cache[0m
+creating directory /home/travis/build/davidcaiqifan/CS3219-Task-B/node_modules[0m
+[31;1m/home/travis/build/davidcaiqifan/CS3219-Task-B/node_modules is not yet cached[0m
+travis_time:end:1b996c4f:start=1634359848681817232,finish=1634359849705643740,duration=1023826508,event=setup_cache
+[0Ktravis_fold:end:cache.npm
+[0K$ node --version
+v14.15.4
+$ npm --version
+6.14.10
+$ nvm --version
+0.38.0
+
+travis_fold:start:before_script.1
+[0Ktravis_time:start:007b7faa
+[0K$ cd ./backend
+travis_time:end:007b7faa:start=1634359850336070895,finish=1634359850339724320,duration=3653425,event=before_script
+[0Ktravis_fold:end:before_script.1
+[0Ktravis_fold:start:before_script.2
+[0Ktravis_time:start:005cd492
+[0K$ npm install
+npm WARN resthub2@2.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.3.2 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.3.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+added 195 packages from 187 contributors and audited 196 packages in 3.721s
+
+19 packages are looking for funding
+  run `npm fund` for details
+
+found 9 vulnerabilities (2 moderate, 5 high, 2 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
+travis_time:end:005cd492:start=1634359850348413291,finish=1634359854490421751,duration=4142008460,event=before_script
+[0Ktravis_fold:end:before_script.2
+[0Ktravis_time:start:01eb6d96
+[0K$ npm test
+
+> resthub2@2.0.0 test /home/travis/build/davidcaiqifan/CS3219-Task-B/backend
+> mocha --exit
+
+(node:5158) Warning: Accessing non-existent property 'count' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5158) Warning: Accessing non-existent property 'findOne' of module exports inside circular dependency
+(node:5158) Warning: Accessing non-existent property 'remove' of module exports inside circular dependency
+(node:5158) Warning: Accessing non-existent property 'updateOne' of module exports inside circular dependency
+Running zoomclasses on port 4000
+
+
+  Get zoomlinks
+    GET /
+(node:5158) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+Successfully connected to the database
+      âœ” should get all zoomlinks record (3225ms)
+
+  Add zoomclass
+    Create
+      âœ” should add new zoomlink (247ms)
+Sat, 16 Oct 2021 04:50:58 GMT express deprecated res.json(obj, status): Use res.status(status).json(obj) instead at zoomController.js:32:17
+      âœ” should return error 409
+
+  Read zoomclass
+    Read
+      âœ” should add read specified zoomclass (236ms)
+      âœ” should return error 404 when classname does not exist (227ms)
+
+  Update zoomclass
+    Update /
+(node:5158) DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated. See: https://mongoosejs.com/docs/deprecations.html#-findandmodify-
+{
+  _id: '616a5a328ebffd1426dc7a6b',
+  create_date: '2021-10-16T04:50:58.416Z',
+  classname: 'zoomnametestotot',
+  zoomlink: 'zoomlinktestedited',
+  profemail: '123',
+  day: '123',
+  time: '123',
+  __v: 0
+}
+      âœ” Should read new zoomlink (262ms)
+      âœ” should return error 404 when classname does not exist (228ms)
+
+  Delete zoomclass
+    Delete /
+      âœ” Should read new zoomlink (237ms)
+      âœ” should return error 404 when classname does not exist (226ms)
+
+
+  9 passing (5s)
+
+travis_time:end:01eb6d96:start=1634359854496325795,finish=1634359860097292121,duration=5600966326,event=script
+[0K[32;1mThe command "npm test" exited with 0.[0m
+travis_fold:start:cache.2
+[0Kstore build cache
+travis_time:start:380106fc
+[0Ktravis_time:end:380106fc:start=1634359860103057930,finish=1634359860106633157,duration=3575227,event=cache
+[0Ktravis_time:start:0559719c
+[0K[32;1mnothing changed[0m
+travis_time:end:0559719c:start=1634359860111975573,finish=1634359860969571482,duration=857595909,event=cache
+[0Ktravis_fold:end:cache.2
+[0K
+
+Done. Your build exited with 0.

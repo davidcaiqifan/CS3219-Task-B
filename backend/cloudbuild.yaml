@@ -1,0 +1,25 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/cs3219-task-b:$COMMIT_SHA'
+      - '-f'
+      - backend/Dockerfile
+      - .
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - 'gcr.io/$PROJECT_ID/cs3219-task-b:$COMMIT_SHA'
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - run
+      - deploy
+      - cs3219-task-b
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/cs3219-task-b:$COMMIT_SHA'
+      - '--region'
+      - asia-southeast1
+    entrypoint: gcloud
+images:
+  - 'gcr.io/$PROJECT_ID/cs3219-task-b:$COMMIT_SHA'
