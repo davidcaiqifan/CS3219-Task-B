@@ -1,10 +1,11 @@
 FROM node:14.5.0-alpine
 ENV NODE_ENV=production
 
-WORKDIR /usr/src/app
-COPY package.json .
+WORKDIR /app
+COPY package.json /app
+COPY . /app
+
 RUN npm install
-COPY . ./
 
 EXPOSE 8080 
 
