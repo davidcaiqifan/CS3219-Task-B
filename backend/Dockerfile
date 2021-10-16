@@ -5,7 +5,7 @@ WORKDIR /app/backend
 
 COPY . /app/backend
 
-# COPY /app/package.json ./
+COPY package.json ./
 
 RUN npm install
 
