@@ -23,7 +23,7 @@ router.route('/zoom/:classname')
     .delete(zoomController.delete);
 
 router.all('*', function(req, res){
-    res.send('api what???', 404);
+    res.send('Page not found', 404);
     });
 
 

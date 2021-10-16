@@ -33,7 +33,7 @@ process.on('uncaughtException', function (err) {
 // mongoose.connect('mongodb://heroku_5686p02g:sia8l3fni4jmu7qbn0ac1t75mf@ds349857.mlab.com:49857/heroku_5686p02g', { useNewUrlParser: true });
 
 // Setup server port
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 4000;
 const cors = require('cors');
 app.use(cors())
 
@@ -45,7 +45,7 @@ app.use('/api', apiRoutes);
 // Launch app to listen to specified port
 
 app.all('*', function (req, res) {
-  res.send('what???', 404);
+  res.send('Page not found', 404);
 });
 
 //An error handling middleware

@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "a003381a-59c6-404b-8495-867b2aafbcca",
-		"name": "TaskB1-Local",
+		"_postman_id": "916b2476-d087-4ec1-b8c6-04511d582095",
+		"name": "TaskB1-Deployment",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -11,12 +11,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api"
 					]
@@ -60,12 +62,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/zoom",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom"
@@ -75,17 +79,19 @@
 			"response": []
 		},
 		{
-			"name": "Get",
+			"name": "Get all",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/zoom",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom"
@@ -107,12 +113,14 @@
 					"urlencoded": []
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/zoom/zoomlinktest",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom/zoomlinktest",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom",
@@ -158,12 +166,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/zoom/zoomlinktest",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom/zoomlinktest",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom",
@@ -209,12 +219,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/zoom/zoomlinktest",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom/zoomlinktest",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom",
@@ -230,12 +242,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/zoom/zoomlinktest",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom/zoomlinktest",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom",
@@ -261,12 +275,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/zoom",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom"
@@ -288,12 +304,14 @@
 					"urlencoded": []
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/zoom/nonexistingclassname",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom/nonexistingclassname",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom",
@@ -339,12 +357,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/zoom/nonexistingclassname",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom/nonexistingclassname",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom",
@@ -360,12 +380,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/zoom/nonexistingid",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/zoom/nonexistingid",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"zoom",
@@ -384,49 +406,27 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "sadsad",
+						"key": "",
 						"value": "",
-						"type": "text"
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
 					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "name",
-							"value": "david",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "david@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "123123213",
-							"type": "text"
-						},
-						{
-							"key": "gender",
-							"value": "Male",
-							"type": "text"
-						},
-						{
-							"key": "dsadasd",
-							"value": "hi",
-							"type": "text"
-						}
-					]
+					"urlencoded": []
 				},
 				"url": {
-					"raw": "http://localhost:4000/unavailablepath",
-					"protocol": "http",
+					"raw": "https://cs3219-task-b-bsyylql4ka-as.a.run.app/api/unavailablepath",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"cs3219-task-b-bsyylql4ka-as",
+						"a",
+						"run",
+						"app"
 					],
-					"port": "4000",
 					"path": [
+						"api",
 						"unavailablepath"
 					]
 				}
