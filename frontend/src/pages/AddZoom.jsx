@@ -46,15 +46,8 @@ export default function SignIn() {
         },
         //validate,
         onSubmit: values => {
-            // alert(JSON.stringify(values, null, 2));
-            const newzoom = {
-                classname: values.classname,
-                zoomlink: values.zoomlink,
-                profemail: values.profemail,
-                day: values.dayofweek,
-                time: values.time,
-            };
-            axios.post('http://localhost:4000/api/zoom', newzoom)
+            alert(JSON.stringify(values, null, 2));
+            axios.post('http://localhost:4000/api/user/register', values)
             .then(res => console.log(res.data));
         },
     });
