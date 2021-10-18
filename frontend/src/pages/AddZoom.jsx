@@ -46,8 +46,8 @@ export default function SignIn() {
         },
         //validate,
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-            axios.post('http://localhost:4000/api/user/register', values)
+            // alert(JSON.stringify(values, null, 2));
+            axios.post('http://localhost:4000/api/zoom', values)
             .then(res => console.log(res.data));
         },
     });

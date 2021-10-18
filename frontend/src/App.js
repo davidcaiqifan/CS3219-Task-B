@@ -27,7 +27,7 @@ class App extends Component {
           <Route path="/" exact component={ZoomPage} />
           <Route path="/create" exact component={AddZoom} />
           <Route path="/edit" exact component={Edit} />
-          <Route exact path="/details/:id" component={DetailsPage}/>
+          <Route exact path="/details/:classname" component={DetailsPage}/>
         </div>
       </Router>
     );
