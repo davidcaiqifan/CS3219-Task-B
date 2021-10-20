@@ -27,6 +27,7 @@ exports.create = async (req, res) => {
     const user = new User({
       username: req.body.username,
       password: hashedPassword,
+      role: req.body.role
     });
     // Save user in the database
     await user.save()
@@ -42,98 +43,6 @@ exports.create = async (req, res) => {
   }
 
 };
-// Find a single User with a id
-exports.findOne = (req, res) => {
-  User.findOne({ username: req.params.username })
-    .then(user => {
-      if (!user) {
-        return res.status(404).send({
-          message: "User not found with username " + req.params.id
-        });
-      }
-      res.send(user);
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "User not found with id " + req.params.id
-        });
-      }
-      return res.status(500).send({
-        message: "Error getting user with id " + req.params.id
-      });
-    });
-};
-// Update a User identified by the id in the request
-exports.update = (req, res) => {
-  // Validate Request
-  if (!req.body) {
-    return res.status(400).send({
-      message: "Please fill all required field"
-    });
-  }
-  // Find user and update it with the request body
-  User.findOneAndUpdate({
-    username: req.body.username,
-    password: req.body.password,
-  }, { new: true })
-    .then(user => {
-      if (!user) {
-        return res.status(404).send({
-          message: "user not found with id " + req.params.username
-        });
-      }
-      res.send(user);
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "user not found with id " + req.params.username
-        });
-      }
-      return res.status(500).send({
-        message: "Error updating user with id " + req.params.username
-      });
-    });
-};
-
-// Autheticate User identified by the username in the request
-exports.auth = (req, res) => {
-  // Validate Request
-  if (!req.body) {
-    return res.status(400).send({
-      message: "Please fill all required field"
-    });
-  }
-  // Find user authenticate
-  User.findOne({
-    username: req.body.username,
-  })
-    .then(async user => {
-      if (!user) {
-        return res.status(404).send({
-          message: "user not found with username " + req.body.username
-        });
-      }
-      try {
-        const authSuccess = await bcrypt.compare(req.body.password, user.password)
-        if (authSuccess) {
-          res.send('Success')
-        } else {
-          res.send('Not Allowed')
-        }
-      } catch {
-        res.status(500).send({
-          message: "Error autheticating user with username " + req.params.username
-        })
-      }
-      res.send(user);
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "user not found with username " + req.params.username
-        });
-      }
-    });
-};
 
 //autheticate with token
 exports.authtoken = (req, res) => {
@@ -141,7 +50,8 @@ exports.authtoken = (req, res) => {
   User.findOne({
     username: req.body.username,
   }).then(user => {
-    res.send(user);
+    // res.send(user);
+    res.send('Successfully authenticated with token')
   }).catch(err => {
     if (err.kind === 'ObjectId') {
       return res.status(404).send({
@@ -242,10 +152,37 @@ function authenticateToken(req, res, next) {
 
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
     //console.log(err)
-    if (err) return res.sendStatus(403)
+    if (err) 
+      res.status(401).send({
+        message: "Username or token invalid"
+      });
     req.user = user
     next()
   })
 }
+
+exports.admin = (req, res) => {
+  User.findOne({
+    username: req.user.name,
+  }).then(user => {
+    // res.send(user);
+    if (user.role == 'admin')
+      res.send('Admin access granted')
+    else 
+      return res.status(403).send({
+        message: "Unauthorized, you are not an admin!"
+      });
+  }).catch(err => {
+    if (err.kind === 'ObjectId') {
+      return res.status(404).send({
+        message: "User not found with username " + req.body.username
+      });
+    }
+    return res.status(500).send({
+      message: "Error getting user with username " + req.params.username
+    });
+  });
+}
+
 
 module.exports.authenticateToken = authenticateToken;

@@ -4,7 +4,7 @@ const userController = require('../controllers/user.controllers');
 
 // Retrieve all users
 router.get('/', userController.findAll);
-
+const app = express()
 //get token
 app.post('/token', (req, res) => {
     const refreshToken = req.body.token
@@ -17,26 +17,21 @@ app.post('/token', (req, res) => {
     })
 })
 
-// Autheticate
-router.post('/login', userController.auth);
-
 // Autheticate and generate token
 router.post('/logint', userController.authnewtoken);
 
 // Create a new user
 router.post('/', userController.create);
 
-// Retrieve a single user with id
-// router.get('/:username', userController.findOne);
-
-// Update a user with id
-// router.put('/:username', userController.update);
-
 // Authenticate a user with token
 // router.get('/auth', userController.authenticateToken, userController.authtoken);
 router.get('/auth', userController.authenticateToken, userController.authtoken);
 
+//Admin access
+router.get('/admin', userController.authenticateToken, userController.admin);
+
 // Delete a user with id
 router.delete('/:username', userController.delete);
+
 module.exports = router
 
