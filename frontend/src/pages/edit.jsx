@@ -3,11 +3,11 @@ import { useState, useEffect, props } from 'react';
 import MaterialTable from 'material-table'
 import { forwardRef } from 'react';
 import axios from 'axios';
-import IconButton from '@mui/material/IconButton';
-import AddIcon from '@material-ui/icons/Add';
-import Icon from '@mui/material/Icon';
-import SearchIcon from '@mui/icons-material/Search';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import IconButton from '@mui/material/IconButton';
+// import AddIcon from '@material-ui/icons/Add';
+// import Icon from '@mui/material/Icon';
+// import SearchIcon from '@mui/icons-material/Search';
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 import AddBox from '@material-ui/icons/AddBox';
@@ -60,108 +60,7 @@ const tableIcons = {
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
 };
 
-// const columns = [
-//     {
-//         title: "Zoom Class", field: "classname",
-//         // render: rowData => <Link href={`https://picsum.photos/1000?random=${rowData.id}`}
-//         //     target="_blank">{rowData.id}</Link>
-//     },
-//     { title: "Zoom Link", field: "zoomlink" },
-//     { title: "Professor Email", field: "profemail" },
-//     { title: "Day", field: 'day' },
-//     { title: "Time", field: "time" },
-// ]
-// export default class ZoomPage extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             data: [],
-//         };
-//     }
 
-//     componentDidMount() {
-//         axios.get('http://localhost:4000/api/zoom')
-//             .then(response => {
-//                 this.setState({
-//                     data: response.data['data']
-//                 });
-//                 console.log(this.state.data)
-//             })
-//             .catch(function (error) {
-//                 console.log(error);
-//             })
-//     }
-//     render() {
-//         return (
-//             <div className="App">
-//                 <h1 align="center">React-App</h1>
-//                 <h4 align='center'>Material Table with CRUD operation</h4>
-//                 <Router>
-//                     <MaterialTable
-//                         icons={tableIcons}
-//                         title="Employee Data"
-//                         data={this.state.data}
-//                         columns={columns}
-//                         editable={{
-//                             onRowAdd: (newRow) => new Promise((resolve, reject) => {
-//                                 const updatedRows = [...this.state.data, newRow]
-//                                 setTimeout(() => {
-//                                     axios.post('http://localhost:4000/api/zoom', newRow)
-//                                     // .then(res => {
-//                                     //     console.log(res.data)
-//                                     //     this.state.data = updatedRows
-//                                     // });
-//                                     resolve()
-//                                     this.setState({ data: updatedRows })
-//                                 }, 2000)
-//                             }),
-//                             onRowDelete: selectedRow => new Promise((resolve, reject) => {
-//                                 const index = selectedRow.tableData.id
-//                                 console.log(selectedRow._id)
-//                                 const updatedRows = [...this.state.data]
-//                                 axios.delete(`http://localhost:4000/api/zoom/${selectedRow._id}`)
-//                                 resolve()
-//                                 updatedRows.splice(index, 1)
-//                                 setTimeout(() => {
-//                                     this.setState({ data: updatedRows })
-//                                     resolve()
-//                                 }, 2000)
-//                             }),
-//                             onRowUpdate: (updatedRow, oldRow) => new Promise((resolve, reject) => {
-//                                 const index = oldRow.tableData.id;
-//                                 const updatedRows = [...this.state.data]
-//                                 updatedRows[index] = updatedRow
-//                                 axios.patch(`http://localhost:4000/api/zoom/${oldRow._id}`, updatedRow)
-//                                     .then(res => {
-//                                         console.log(res.data)
-//                                     });
-//                                 resolve()
-//                                 setTimeout(() => {
-//                                     this.setState({ data: updatedRows })
-//                                     resolve()
-//                                 }, 2000)
-//                             })
-
-//                         }}
-//                         actions={[
-//                             rowData => ({
-//                                 icon: () => <Link to={`/product/${rowData._id}/edit`}><SearchIcon/></Link>,
-//                                 tooltip: 'View',
-//                                 onClick: (rowData)
-//                               })
-//                         ]}
-//                         options={{
-//                             actionsColumnIndex: -1, addRowPosition: "first"
-//                         }}
-//                     />
-//                 </Router>
-
-//             </div>
-//         );
-//     }
-// }
-
-// const zoomList = []
 function App() {
     const history = useHistory();
     const [data, setData] = useState([])
@@ -209,9 +108,9 @@ function App() {
                     }),
                     onRowDelete: selectedRow => new Promise((resolve, reject) => {
                         const index = selectedRow.tableData.id
-                        console.log(selectedRow._id)
+                        console.log(selectedRow)
                         const updatedRows = [...data]
-                        axios.delete(`http://localhost:4000/api/zoom/${selectedRow._id}`)
+                        axios.delete(`http://localhost:4000/api/zoom/${selectedRow.classname}`)
                         resolve()
                         updatedRows.splice(index, 1)
                         // setTimeout(() => {
@@ -225,7 +124,7 @@ function App() {
                         const index = oldRow.tableData.id;
                         const updatedRows = [...data]
                         updatedRows[index] = updatedRow
-                        axios.patch(`http://localhost:4000/api/zoom/${oldRow._id}`, updatedRow)
+                        axios.put(`http://localhost:4000/api/zoom/${oldRow.classname}`, updatedRow)
                             .then(res => {
                                 console.log(res.data)
                             });
@@ -241,15 +140,10 @@ function App() {
 
                 }}
                 actions={[
-                    // rowData => ({
-                    //     icon: () => <Link to={`/product/${rowData._id}/edit`}><SearchIcon /></Link>,
-                    //     tooltip: 'View',
-                    //     onClick: (rowData)
-                    // })
                     {
                         icon: Search,
                         tooltip: 'View',
-                        onClick: (event, rowData) => history.push(`/details/${rowData._id}`)
+                        onClick: (event, rowData) => history.push(`/details/${rowData.classname}`)
                     }
                 ]}
                 options={{

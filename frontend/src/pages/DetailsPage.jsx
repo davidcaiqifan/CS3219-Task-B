@@ -56,17 +56,8 @@ export default class DetailsPage extends Component {
     }
 
     componentDidMount() {
-        // axios.get(`http://localhost:4000/api/zoom/${this.props.match.params.id}`)
-        //     .then(response => {
-        //         this.setState({
-        //             data: response.data['data']
-        //         });
-        //         console.log(this.state.data)
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     })
-        axios.get(`http://localhost:4000/api/zoom/${this.props.match.params.id}`)
+        console.log(this.props.match.params)
+        axios.get(`http://localhost:4000/api/zoom/${this.props.match.params.classname}`)
             .then(response => {
                 var data1 = []
                 data1.push(response.data)

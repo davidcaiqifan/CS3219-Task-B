@@ -1,12 +1,12 @@
 // Import express
-let express = require('express');
+const express = require('express');
 // Import Mongoose
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 // Initialize the app
-let app = express();
+const app = express();
 
 // Import routes
-let apiRoutes = require("./api-routes");
+const apiRoutes = require("./api-routes");
 // Configure bodyparser to handle post requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -19,7 +19,7 @@ mongoose.connect(production_uri, {
   useNewUrlParser: true
 }).then(() => {
   console.log("Successfully connected to the database");
-}).catch(err => {
+}).catch(err => { 
   console.log('Could not connect to the database.', err);
   process.exit();
 });
@@ -45,7 +45,7 @@ app.use('/api', apiRoutes);
 // Launch app to listen to specified port
 
 app.all('*', function (req, res) {
-  res.send('what???', 404);
+  res.send('Page not found', 404);
 });
 
 //An error handling middleware
@@ -63,4 +63,6 @@ app.use(function (err, req, res, next) {
 app.listen(port, function () {
   console.log("Running zoomclasses on port " + port);
 });
+
 module.exports = app
+

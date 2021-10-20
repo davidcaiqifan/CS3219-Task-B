@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./custom.scss";
 import ZoomPage from './pages/ZoomPage';
 import AddZoom from './pages/AddZoom';
-import Test from './pages/test';
+import Edit from './pages/edit';
 import DetailsPage from './pages/DetailsPage';
 class App extends Component {
   render() {
@@ -26,8 +26,8 @@ class App extends Component {
           <br />
           <Route path="/" exact component={ZoomPage} />
           <Route path="/create" exact component={AddZoom} />
-          <Route path="/edit" exact component={Test} />
-          <Route exact path="/details/:id" component={DetailsPage}/>
+          <Route path="/edit" exact component={Edit} />
+          <Route exact path="/details/:classname" component={DetailsPage}/>
         </div>
       </Router>
     );
